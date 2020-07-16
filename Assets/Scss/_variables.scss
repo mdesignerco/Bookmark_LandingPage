@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+$Desktop: 1440px;
+$Mobile: 375px;
+
+//Colors
+  //Primary
+$white: #ffffff;
+$softBlue: hsl(231,69%,60%);
+$softRed: hsl(0,94%,66%);
+  //Neutral
+$Gray: #f7f7f7;
+$GrayishBlue: hsl(229, 8%, 60%);
+$VeryDarkBlue: hsl(229, 31%, 21%);
+
+//Font
+$fontFamily: 'Rubik', sans-serif;
+$fontSize: 18px;
+$fontSize-XL: $fontSize * 2.2;
+$fontSize-M: $fontSize * 1.5;
+$fontSize-L: $fontSize * 1.2;
+
+//padding
+$padding: 4px;

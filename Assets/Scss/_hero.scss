@@ -1,0 +1,13 @@
+.hero {
+  @include display( flex, center, center );
+  @include padding(0, $padding*32, 0, $padding*32);
+  &__description {
+    &__title {
+      @include fontStyle( $fontSize-XL, 500);
+      color: $VeryDarkBlue;
+    }
+    &__text {
+      @include fontStyle( $fontSize, 400);
+    }
+  }
+}

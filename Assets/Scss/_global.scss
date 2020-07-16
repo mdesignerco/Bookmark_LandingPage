@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  max-width: $Desktop;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-weight: 400;
+  color: $GrayishBlue;
+}
+
+.button {
+  &__action {
+    @include button($softRed, $white);
+    cursor: pointer;
+    &:hover {
+      @include button( $softRed, $softRed, false );
+    }
+  }
+  &__main {
+    @include button($softBlue, $white );
+    cursor: pointer;
+    &:hover {
+      @include button( $softBlue, $softBlue, false );
+    }
+  }
+  &__second {
+    @include button($Gray, $VeryDarkBlue);
+    cursor: pointer;
+    &:hover {
+      @include button( $VeryDarkBlue, $VeryDarkBlue, false );
+    }
+  }
+}
+
+.attribution {
+  @include display(flex, center, center);
+  margin: 0;
+  &__text {
+    @include fontStyle( $fontSize - 8 , 400 );
+    color: $white;
+  }
+  a {
+    color: $softRed;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

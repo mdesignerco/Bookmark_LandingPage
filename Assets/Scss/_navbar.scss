@@ -1,0 +1,21 @@
+.navbar {
+  @include padding( 0, $padding*32, 0, $padding*32);
+  @include display ( flex, space-between, center );
+  &__list{
+    @include display (inherit, center, center);
+    list-style: none;
+    &__item{
+      @include padding( 0, $padding*4, 0, $padding*4 );
+      @include fontStyle( $fontSize, 400 );
+      color: $VeryDarkBlue;
+      text-transform: uppercase;
+      cursor: pointer;
+      &:hover {
+        color: $softRed;
+      }
+      >button {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
