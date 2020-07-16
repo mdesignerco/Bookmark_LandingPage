@@ -4,24 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./Assets/images/favicon-32x32.png">
 
   <title>Frontend Mentor | Bookmark landing page</title>
+
+  <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 <body>
 
   <div class="navbar">
     <div class="navbar__logo">
       <img
-        src="./images/logo-bookmark.svg"
+        src="./Assets/images/logo-bookmark.svg"
         alt="Bookmark"
       />
     </div>
-    <ul class="navbar__listItem">
-      <li class="navbar__listItem-li">Features</li>
-      <li class="navbar__listItem-li">Pricing</li>
-      <li class="navbar__listItem-li">Contact</li>
-      <li class="navbar__listItem-li">Login</li>
+    <ul class="navbar__list">
+      <li class="navbar__list__item">Features</li>
+      <li class="navbar__list__item">Pricing</li>
+      <li class="navbar__list__item">Contact</li>
+      <li class="navbar__list__item">
+        <button class="button__action">Login</button>
+      </li>
     </ul>
   </div>
 
@@ -31,13 +35,13 @@
       <p class="hero__description__text">A clean and simple interface to organize your favourite websites. Open a new
         browser tab and see your sites load instantly. Try it for free.
       </p>
-      <button class="main__button">Get it on Chrome</button>
-      <button class="second__button">Get it on Firefox</button>
+      <button class="button__main">Get it on Chrome</button>
+      <button class="button__second">Get it on Firefox</button>
     </div>
     <div class="hero__image">
       <img
         class="hero__image__img"
-        src="./images/illustration-hero.svg"
+        src="./Assets/images/illustration-hero.svg"
         alt="illustration"
       />
     </div>
@@ -50,40 +54,50 @@
       Your bookmarks sync between your devices so you can access them on the go.
     </p>
     <div class="features__tab">
-      <ul class="features__navtab">
-        <li class="features__navtab__item">Simple Bookmarking</li>
-        <li class="features__navtab__item">Speedy Searching</li>
-        <li class="features__navtab__item">Easy Sharing</li>
+      <ul class="features__tab__navtab">
+        <li class="features__tab__navtab__item-active">Simple Bookmarking</li>
+        <li class="features__tab__navtab__item">Speedy Searching</li>
+        <li class="features__tab__navtab__item">Easy Sharing</li>
       </ul>
-      <div class="features__tabSection">
-        <div class="features__tabSection__item">
-          <div class="features__tabSection__item__illustration">
-            <img src="" alt="">
+      <div class="features__tab__section">
+        <div class="features__tab__section__item-active">
+          <div class="features__tab__section__item__illustration">
+            <img src="./Assets/images/illustration-features-tab-1.svg" alt="Simple Bookmarking">
           </div>
-          <div class="features__tabSection__item___description">
-            <h2 class="features__tabSection__item__description__title">Bookmark in one click</h2>
-            <p class="features__tabSection__item__description__text">
+          <div class="features__tab__section__item__description">
+            <h2 class="features__tab__section__item__description__title">Bookmark in one click</h2>
+            <p class="features__tab__section__item__description__text">
               Organize your bookmarks however you like. Our simple drag-and-drop interface
               gives you complete control over how you manage your favourite sites.
             </p>
-            <button class="main__button">More Info</button>
+            <button class="button__main">More Info</button>
           </div>
         </div>
-        <div class="features__tabSection__item">
-          <h2 class="features__tabSection__item__description__title">Intelligent search</h2>
-          <p class="features__tabSection__item__description__text">
-            Our powerful search feature will help you find saved sites in no time at all.
-            No need to trawl through all of your bookmarks.
-          </p>
-          <button class="main__button">More Info</button>
+        <div class="features__tab__section__item">
+          <div class="features__tab__section__item__illustration">
+            <img src="./Assets/images/illustration-features-tab-2.svg" alt="Simple Bookmarking">
+          </div>
+          <div class="features__tab__section__item__description">
+            <h2 class="features__tab__section__item__description__title">Intelligent search</h2>
+            <p class="features__tab__section__item__description__text">
+              Our powerful search feature will help you find saved sites in no time at all.
+              No need to trawl through all of your bookmarks.
+            </p>
+            <button class="button__main">More Info</button>
+          </div>
         </div>
-        <div class="features__tabSection__item">
-          <h2 class="features__tabSection__item__description__title">Share your bookmarks</h2>
-          <p class="features__tabSection__item__description__text">
-            Easily share your bookmarks and collections with others. Create a shareable
-            link that you can send at the click of a button.
-          </p>
-          <button class="main__button">More Info</button>
+        <div class="features__tab__section__item">
+          <div class="features__tab__section__item__illustration">
+            <img src="./Assets/images/illustration-features-tab-3.svg" alt="Simple Bookmarking">
+          </div>
+          <div class="features__tab__section__item__description">
+            <h2 class="features__tab__section__item__description__title">Share your bookmarks</h2>
+            <p class="features__tab__section__item__description__text">
+              Easily share your bookmarks and collections with others. Create a shareable
+              link that you can send at the click of a button.
+            </p>
+            <button class="button__main">More Info</button>
+          </div>
         </div>
       </div>
     </div>
@@ -91,39 +105,39 @@
 
   <section class="features">
     <h2 class="features__title">Download the extension</h2>
-    <p class="features__text">
+    <p class="features__description">
       We’ve got more browsers in the pipeline. Please do let us know if you’ve
       got a favourite you’d like us to prioritize.
     </p>
     <div class="features__download">
       <div class="features__download__item">
-        <div class="features__download__body">
-          <img src="./images/logo-chrome.svg" alt="chrome">
-          <h3 class="features__download__bodytitle">Add to Chrome</h3>
-          <span class="features__download__bodyText"> Minimum version 62</span>
+        <div class="features__download__item__body">
+          <img src="./Assets/images/logo-chrome.svg" alt="chrome">
+          <h3 class="features__download__item__bodytitle">Add to Chrome</h3>
+          <span class="features__download__item__bodyText"> Minimum version 62</span>
         </div>
         <div class="features__download__footer">
-          <button class="main__button">Add & Install Extension</button>
+          <button class="button__main">Add & Install Extension</button>
         </div>
       </div>
       <div class="features__download__item">
-        <div class="features__download__body">
-          <img src="./images/logo-firefox.svg" alt="firefox">
-          <h3 class="features__download__bodytitle">Add to Firefox</h3>
-          <span class="features__download__bodyText">Minimum version 55</span>
+        <div class="features__download__item__body">
+          <img src="./Assets/images/logo-firefox.svg" alt="firefox">
+          <h3 class="features__download__item__bodytitle">Add to Firefox</h3>
+          <span class="features__download__item__bodyText">Minimum version 55</span>
         </div>
         <div class="features__download__footer">
-          <button class="main__button">Add & Install Extension</button>
+          <button class="button__main">Add & Install Extension</button>
         </div>
       </div>
       <div class="features__download__item">
-        <div class="features__download__body">
-          <img src="./images/logo-opera.svg" alt="Opera>
-          <h3 class="features__download__bodytitle">Add to Opera</h3>
-          <span class="features__download__bodyText">Minimum version 46</span>
+        <div class="features__download__item__body">
+          <img src="./Assets/images/logo-opera.svg" alt="Opera">
+          <h3 class="features__download__item__bodytitle">Add to Opera</h3>
+          <span class="features__download__item__bodytext">Minimum version 46</span>
         </div>
         <div class="features__download__footer">
-          <button class="main__button">Add & Install Extension</button>
+          <button class="button__main">Add & Install Extension</button>
         </div>
       </div>
     </div>
@@ -131,52 +145,59 @@
 
   <section class="features">
     <h2 class="features__title">Frequently Asked Questions</h2>
-    <p class="features__text">
+    <p class="features__description">
       Here are some of our FAQs. If you have any other questions you’d like
       answered please feel free to email us.
     </p>
     <div class="features__accordion">
       <div class="features__accordion__item">
-        <button class="accordion__title">What is Bookmark?</button>
+        <h3 class="features__accordion__itemtitle">What is Bookmark?</h3>
+      </div>
+      <div class="features__collapse">
+        <div class="features__collapse__item">
+        <p class="features__collapse__item__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+          justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
+        </p>
+      </div>
       </div>
       <div class="features__accordion__item">
-        <button class="accordion__title">How can I request a new browser?</button>
+        <h3 class="features__accordion__itemtitle">How can I request a new browser?</h3>
+      </div>
+      <div class="features__collapse-active">
+        <div class="features__collapse__item">
+          <p class="features__collapse__item__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+            justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
+          </p>
+        </div>
       </div>
       <div class="features__accordion__item">
-        <button class="accordion__title">Is there a mobile app?</button>
+        <h3 class="features__accordion__itemtitle">Is there a mobile app?</h3>
+      </div>
+      <div class="features__collapse">
+        <div class="features__collapse__item">
+          <p class="features__collapse__item__text">
+            Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
+            Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+            ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
+            Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
+          </p>
+        </div>
       </div>
       <div class="features__accordion__item">
-        <button class="accordion__title">What about other Chromium browsers?</button>
+        <h3 class="features__accordion__itemtitle">What about other Chromium browsers?</h3>
+      </div>
+      <div class="features__collapse">
+        <div class="features__collapse__item">
+          <p class="features__collapse__item__text">
+            Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
+            vitae neque eget nisl gravida pellentesque non ut velit.
+          </p>
+        </div>
       </div>
     </div>
-    <div class="features__collapse">
-      <p class="features__collapse__text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
-        justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
-      </p>
-    </div>
-    <div class="features__collapse">
-      <p class="features__collapse__text">
-        Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
-        Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
-        ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
-        Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
-      </p>
-    </div>
-    <div class="features__collapse">
-      <p class="features__collapse__text">
-        Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
-        urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
-        sollicitudin ex et ultricies bibendum.
-      </p>
-    </div>
-    <div class="features__collapse">
-      <p class="features__collapse__text">
-        Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
-        vitae neque eget nisl gravida pellentesque non ut velit.
-      </p>
-    </div>
-    <button class="main__button">More Info</button>
+    <button class="button__main">More Info</button>
   </section>
 
   <section class="features">
@@ -188,36 +209,35 @@
         class="features__form__input"
         placeholder="Enter your email address"
       />
-      <div class="button__action__button">Contact Us</div>
+      <button class="button__action">Contact Us</button>
     </div>
   </section>
 
   <footer class="footer">
     <div class="navbar">
       <div class="navbar__logo">
-        <img src="./images/logo-bookmark.svg" alt="Bookmark">
+        <img src="./Assets/images/logo-bookmark.svg" alt="Bookmark">
       </div>
       <ul class="navbar__list">
-        <div class="navbar__list__item">Features</div>
-        <div class="navbar__list__item">Pricing</div>
-        <div class="navbar__list__item">Contact</div>
+        <li class="navbar__list__item">Features</li>
+        <li class="navbar__list__item">Pricing</li>
+        <li class="navbar__list__item">Contact</li>
       </ul>
       <ul class="navbar__social">
-        <li class="navbar__social__item"> 
-          <img src="./images/icon-facebook.svg" alt="Facebook">
+        <li class="navbar__social__item">
+          <img src="./Assets/images/icon-facebook.svg" alt="Facebook">
         </li>
         <li class="navbar__social__item">
-          <img src="./images/icon-twitter.svg" alt="Twitter">
+          <img src="./Assets/images/icon-twitter.svg" alt="Twitter">
         </li>
       </ul>
     </div>
-  </footer>
-
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="https://mdesigner.co">mdesigner.co</a>.
-    </p>
+    <div class="attribution">
+      <p class="attribution__text">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://mdesigner.co">mdesigner.co</a>.
+      </p>
+    </div>
   </footer>
 </body>
 </html>
