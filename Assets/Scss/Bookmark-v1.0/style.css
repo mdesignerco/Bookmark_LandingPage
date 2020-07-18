@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?ee7xf8');
-  src:  url('fonts/icomoon.eot?ee7xf8#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?ee7xf8') format('truetype'),
-    url('fonts/icomoon.woff?ee7xf8') format('woff'),
-    url('fonts/icomoon.svg?ee7xf8#icomoon') format('svg');
+  font-family: 'Bookmark';
+  src:  url('fonts/Bookmark.eot?94j1ca');
+  src:  url('fonts/Bookmark.eot?94j1ca#iefix') format('embedded-opentype'),
+    url('fonts/Bookmark.ttf?94j1ca') format('truetype'),
+    url('fonts/Bookmark.woff?94j1ca') format('woff'),
+    url('fonts/Bookmark.svg?94j1ca#Bookmark') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+i {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'Bookmark' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;

@@ -51,3 +51,63 @@ body {
     }
   }
 }
+
+.bg-darkblue {
+  background-color: $VeryDarkBlue;
+}
+.bg-softblue {
+  background-color: $softBlue;
+  color: $white;
+}
+
+.input {
+  &-message {
+    @include fontStyle ( $fontSize - 8px, 400);
+    @include padding( $padding, $padding*2, $padding, $padding*2);
+  }
+  &__group {
+    @include display(flex, center, flex-start);
+    width: 100%;
+    flex-direction: row;
+    > input {
+      width: 100%;
+      border: 1px solid transparent;
+      outline: transparent;
+      @include input();
+      &::placeholder {
+        color: $GrayishBlue;
+        @include fontStyle( $fontSize - 6px, 400 );
+      }
+      &:focus {
+        border: 1px solid $VeryDarkBlue;
+        outline: $VeryDarkBlue;
+      }
+    }
+    &-error {
+      @include display(flex, center, flex-start );
+      width: 100%;
+      background-color: $softRed;
+      flex-direction: column;
+      border-radius: $padding;
+      > input {
+        @include input();
+        width: 100%;
+        border: 1px solid $softRed;
+        outline: $softRed;
+        background-image: url('/Assets/images/icon-error.svg');
+        background-repeat: no-repeat;
+        background-position: center right 5px;
+        background-size: $fontSize - 6px;
+        &::placeholder {
+          color: $GrayishBlue;
+          @include fontStyle( $fontSize - 6px, 400 );
+        }
+        &:focus {
+          border: 1px solid $softRed;
+          outline: $softRed;
+          background-image: url('/Assets/images/icon-error.svg');
+        }
+      }
+    }
+  }
+}

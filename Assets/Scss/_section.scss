@@ -4,133 +4,154 @@
   flex-direction: column;
   width: 100%;
   @include padding($padding*24, $padding*32, $padding*24, $padding*32);
-&__title {
-  @include fontStyle( $fontSize-M, 500 );
-  color: $VeryDarkBlue;
-}
-&__description {
-  @include fontStyle( $fontSize, 400);
-  width: 50%;
-  text-align: center;
-}
-&__tab {
-  width: 100%;
-  &__navtab {
-    @include display( flex, center, center );
-    list-style: none;
-    border-bottom: 2px solid $Gray;
+  &__span {
+    @include fontStyle( $fontSize - 6px, 400 );
+    letter-spacing: 5px;
+  }
+  &__title {
+    @include fontStyle( $fontSize-M, 500 );
+    color: $VeryDarkBlue;
+    &-white {
+      @include fontStyle( $fontSize-M, 500 );
+      color: $white;
+      text-align: center;
+    }
+  }
+  &__description {
+    @include fontStyle( $fontSize, 400);
     width: 50%;
-    margin: 0 auto;
-    &__item {
-      @include padding ( $padding*4, $padding*4, $padding*4, $padding*4);
-      cursor: pointer;
-      &:hover {
-        color: $softRed;
-      }
-      &-active {
-        @include padding ( $padding*4, $padding*4, $padding*4, $padding*4);
-        color: $VeryDarkBlue;
-        border-bottom: 3px solid $softRed;
-      }
-    }
+    text-align: center;
   }
-  &__section {
-    @include display( flex, center , center );
-    flex-direction: column;
+  &__tab {
     width: 100%;
-    &__item {
-      display: none;
-      &-active {
-        @include display( flex, center , center );
-        @include padding($padding*16, 0, $padding*16, 0);
-      }
-      &__description {
-        @include padding( 0, $padding*16, 0, $padding*16);
-        &__title {
-          @include fontStyle( $fontSize-M, 500 );
-          color: $VeryDarkBlue;
+    &__navtab {
+      @include display( flex, center, center );
+      list-style: none;
+      border-bottom: 2px solid $Gray;
+      width: 50%;
+      margin: 0 auto;
+      &__item {
+        @include padding ( $padding*4, $padding*4, $padding*4, $padding*4);
+        cursor: pointer;
+        &:hover {
+          color: $softRed;
         }
-        &__text {
-          @include fontStyle( $fontSize, 400 );
+        &-active {
+          @include padding ( $padding*4, $padding*4, $padding*4, $padding*4);
+          color: $VeryDarkBlue;
+          border-bottom: 3px solid $softRed;
+        }
+      }
+    }
+    &__section {
+      @include display( flex, center , center );
+      flex-direction: column;
+      width: 100%;
+      &__item {
+        display: none;
+        &-active {
+          @include display( flex, center , center );
+          @include padding($padding*16, 0, $padding*16, 0);
+        }
+        &__description {
+          @include padding( 0, $padding*16, 0, $padding*16);
+          &__title {
+            @include fontStyle( $fontSize-M, 500 );
+            color: $VeryDarkBlue;
+          }
+          &__text {
+            @include fontStyle( $fontSize, 400 );
+          }
         }
       }
     }
   }
-}
-&__download {
-  @include display( flex, center , center );
-  &__item{
-    @include display(flex,  center, center);
-    flex-direction: column;
-    @include padding($padding*4, $padding*4, $padding*4, $padding*4);
-    margin: $padding*4;
-    @include box-shadow( 0px, 5px, 5px, rgba($softBlue,.12), false );
-    border-radius: $padding*2;
-    &__body {
+  &__download {
+    @include display( flex, center , center );
+    &__item{
       @include display(flex,  center, center);
       flex-direction: column;
-      @include padding(0, 0, $padding*4, 0);
-      &title {
-        @include fontStyle( $fontSize-L, 500 );
-        color: $VeryDarkBlue;
-      }
-      &text {
-        @include fontStyle( $fontSize/1.2, 400 );
+      @include padding($padding*4, $padding*4, $padding*4, $padding*4);
+      margin: $padding*4;
+      @include box-shadow( 0px, 5px, 5px, rgba($softBlue,.12), false );
+      border-radius: $padding*2;
+      &__body {
+        @include display(flex,  center, center);
+        flex-direction: column;
+        @include padding(0, 0, $padding*4, 0);
+        &title {
+          @include fontStyle( $fontSize-L, 500 );
+          color: $VeryDarkBlue;
+        }
+        &text {
+          @include fontStyle( $fontSize/1.2, 400 );
+        }
       }
     }
+    &__footer {
+      @include padding( $padding*4, $padding*4, 0, $padding*4 );
+      background-image: url('../images/bg-dots.svg');
+      background-repeat: no-repeat;
+    }
   }
-  &__footer {
-    @include padding( $padding*4, $padding*4, 0, $padding*4 );
-    background-image: url('../images/bg-dots.svg');
-    background-repeat: no-repeat;
-  }
-}
-&__accordion {
-  width: 50%;
-  &__item {
-    @include display( flex, space-between, center );
-    width: 100%;
-    border-bottom: 1px solid $GrayishBlue;
-    cursor: pointer;
-    &-active {
+  &__accordion {
+    width: 50%;
+    &__item {
       @include display( flex, space-between, center );
       width: 100%;
-      border: none;
+      border-bottom: 1px solid $GrayishBlue;
       cursor: pointer;
-    }
-    &:first-child {
-      border-top: 1px solid $GrayishBlue;
-    }
-    &:after {
-      content: url('../images/icon-arrow.svg');
-      @include padding(0, 0, 0, $padding*4);
-    }
-    &title {
-      @include fontStyle( $fontSize, 400 );
-      color: $VeryDarkBlue;
-      &:hover {
-        color: $softRed;
+      &-active {
+        @include display( flex, space-between, center );
+        width: 100%;
+        border: none;
+        cursor: pointer;
+      }
+      &:first-child {
+        border-top: 1px solid $GrayishBlue;
+      }
+      &:after {
+        content: url('../images/icon-arrow.svg');
+        @include padding(0, 0, 0, $padding*4);
+      }
+      &title {
+        @include fontStyle( $fontSize, 400 );
+        color: $VeryDarkBlue;
+        &:hover {
+          color: $softRed;
+        }
       }
     }
   }
-}
-&__collapse {
-  display: none;
-  &-active {
-    width: 100%;
-    color: rgba($VeryDarkBlue, 0.7);
-    display: block;
-  }
-  &__item {
-    &__text {
-      @include fontStyle( $fontSize, 400 )
+  &__collapse {
+    display: none;
+    &-active {
+      width: 100%;
+      color: rgba($VeryDarkBlue, 0.7);
+      display: block;
+    }
+    &__item {
+      &__text {
+        @include fontStyle( $fontSize, 400 )
+      }
     }
   }
-}
->button {
-  margin-top: $padding*16;
-  &:hover {
-    margin-top: $padding*16;
+  &__form {
+    @include display(flex, center, flex-start);
+    flex-direction: row;
+    width: 40%;
+    > button {
+      width: 30%;
+      margin-top: 0;
+      &:hover {
+        margin-top: 0
+      }
+    }
   }
-}
+  >button {
+    margin-top: $padding*16;
+    &:hover {
+      margin-top: $padding*16;
+    }
+  }
 }
