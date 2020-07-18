@@ -347,11 +347,7 @@ body {
 .features__tab__navtab__item:hover {
   color: #fa5757;
 }
-.features__tab__navtab__item-active {
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-bottom: 16px;
-  padding-right: 16px;
+.features__tab__navtab__item.active {
   color: #252b46;
   border-bottom: 3px solid #fa5757;
 }
@@ -364,15 +360,15 @@ body {
 }
 .features__tab__section__item {
   display: none;
-}
-.features__tab__section__item-active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding-top: 64px;
   padding-left: 0;
   padding-bottom: 64px;
   padding-right: 0;
+}
+.features__tab__section__item.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .features__tab__section__item__description {
   padding-top: 0;
