@@ -1,9 +1,22 @@
 const tab = document.getElementsByClassName('features__tab__navtab__item');
 const tabActive = document.getElementsByClassName('active');
-const tabContent = document.getElementsByClassName('features__tab__section__item')
+const tabContent = document.getElementsByClassName('features__tab__section__item');
+const cards = document.getElementsByClassName('features__download__item');
+const accordion = document.getElementsByClassName('features__accordion__item');
+
+document.onreadystatechange = () => {
+  let margin = 80;
+  for ( let i = 0; i < cards.length ; i++) {
+    cards[i].style.marginTop = `${margin}px`;
+    margin = margin*2;
+  }
+}
 
 for ( let i = 0; i < tab.length; i++ ) {
-  tab[i].addEventListener ('click', ()=>{
+  accordion[i].addEventListener ('click', () => {
+    
+  })
+  tab[i].addEventListener ('click', () => {
       removeClass();
       addClass(tab[i], i);
   });
