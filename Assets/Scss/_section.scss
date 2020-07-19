@@ -1,9 +1,12 @@
 
 .features {
-  @include display( flex, center, center );
   flex-direction: column;
   width: 100%;
+  @include display( flex, center, center );
   @include padding($padding*24, $padding*32, $padding*24, $padding*32);
+  @include respond-to($tablet) {
+    @include padding($padding*4, $padding*4, $padding*4, $padding*4);
+  }
   &__span {
     @include fontStyle( $fontSize - 6px, 400 );
     letter-spacing: 5px;
@@ -21,6 +24,9 @@
     @include fontStyle( $fontSize, 400);
     width: 50%;
     text-align: center;
+    @include respond-to($tablet) {
+      width: 100%;
+    }
   }
   &__tab {
     width: 100%;
@@ -30,9 +36,24 @@
       border-bottom: 2px solid $Gray;
       width: 50%;
       margin: 0 auto;
+      @include padding ( 0, 0, 0, 0 );
+      @include respond-to($tablet) {
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+        border-top: 2px solid $Gray;
+        border-bottom: none;
+      }
       &__item {
         @include padding ( $padding*4, $padding*4, $padding*4, $padding*4);
         cursor: pointer;
+        @include respond-to($tablet) {
+          @include padding ( $padding*4, 0, $padding*4, 0);
+          width: 100%;
+          border-to : 2px solid $Gray;
+          border-bottom : 2px solid $Gray;
+          text-align: center;
+        }
         &:hover {
           color: $softRed;
         }
@@ -40,20 +61,33 @@
           color: $VeryDarkBlue;
           border-bottom: 3px solid $softRed;
         }
+        >a {
+          @include respond-to($tablet) {
+          }
+        }
       }
     }
     &__section {
       @include display( flex, center , center );
       flex-direction: column;
       width: 100%;
+      @include respond-to($tablet) {
+        flex-direction: row;
+      }
       &__item {
         display: none;
         @include padding($padding*16, 0, $padding*16, 0);
+        @include respond-to($tablet) {
+          flex-direction: column;
+        }
         &.active {
           @include display( flex, center , center );
         }
         &__description {
           @include padding( 0, $padding*16, 0, $padding*16);
+          @include respond-to($tablet) {
+            @include padding( 0, 0, 0, 0);
+          }
           &__title {
             @include fontStyle( $fontSize-M, 500 );
             color: $VeryDarkBlue;
@@ -61,26 +95,40 @@
           &__text {
             @include fontStyle( $fontSize, 400 );
           }
+          >button {
+            display: none;
+          }
+        }
+        &__illustration {
+          width: 100%;
+          height: auto;
+          >img {
+            width: 100%;
+            height: auto;
+          }
         }
       }
     }
   }
   &__download {
     @include display( flex, center , center );
-    &__item{
-      @include display(flex,  center, center);
+    @include respond-to($tablet) {
       flex-direction: column;
-      @include padding($padding*4, $padding*4, $padding*4, $padding*4);
+    }
+    &__item{
+      flex-direction: column;
       margin: $padding*4;
-      @include box-shadow( 0px, 5px, 5px, rgba($softBlue,.12), false );
       border-radius: $padding*2;
+      @include display(flex,  center, center);
+      @include padding($padding*4, $padding*4, $padding*4, $padding*4);
+      @include box-shadow( 0px, 5px, 5px, rgba($softBlue,.12), false );
       &__body {
-        @include display(flex,  center, center);
         flex-direction: column;
+        @include display(flex,  center, center);
         @include padding(0, 0, $padding*4, 0);
         &title {
-          @include fontStyle( $fontSize-L, 500 );
           color: $VeryDarkBlue;
+          @include fontStyle( $fontSize-L, 500 );
         }
         &text {
           @include fontStyle( $fontSize/1.2, 400 );
@@ -100,11 +148,11 @@
       width: 100%;
       border-bottom: 1px solid $GrayishBlue;
       cursor: pointer;
-      &-active {
-        @include display( flex, space-between, center );
-        width: 100%;
-        border: none;
-        cursor: pointer;
+      &.open {
+        &:after {
+          content: url('../images/icon-arrow-up.svg');
+          @include padding(0, 0, 0, $padding*4);
+        }
       }
       &:first-child {
         border-top: 1px solid $GrayishBlue;
@@ -121,10 +169,14 @@
         }
       }
     }
+    @include respond-to($tablet) {
+      flex-direction: row;
+      width: 100%;
+    }
   }
   &__collapse {
     display: none;
-    &-active {
+    &.open {
       width: 100%;
       color: rgba($VeryDarkBlue, 0.7);
       display: block;
@@ -145,6 +197,15 @@
       &:hover {
         margin-top: 0
       }
+      @include respond-to($tablet) {
+        width: 100%;
+        margin: 0;
+        margin-top: 8px;
+      }
+    }
+    @include respond-to($tablet) {
+      width: 100%;
+      flex-direction: column;
     }
   }
   >button {
@@ -154,3 +215,4 @@
     }
   }
 }
+

@@ -1,9 +1,17 @@
 .footer {
   background-color: $VeryDarkBlue;
   @include padding( 0, $padding*32, 0, $padding*32);
+  @include respond-to($tablet) {
+    @include padding( $padding*8, $padding*8, $padding*8, $padding*8 );
+  }
   .navbar {
     @include padding( 0, 0, 0, 0);
     @include display( flex, space-between, center);
+    @include respond-to($tablet) {
+      flex-direction: column;
+      @include padding( $padding*8, $padding*8, $padding*8, $padding*8 );
+      @include display (inherit, center, center);
+    }
     &__list {
       @include display( flex, start, center);
       width: 100%;
@@ -18,6 +26,9 @@
     &__social {
       @include display(flex, center, center);
       list-style: none;
+      @include respond-to($tablet) {
+        @include padding( 0,0,0,0 );
+      }
       &__item {
         @include padding(0, $padding*4, 0, $padding*4);
         cursor: pointer;

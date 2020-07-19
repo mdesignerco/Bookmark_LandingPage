@@ -63,3 +63,9 @@
   color: $GrayishBlue;
   border-radius: $padding;
 }
+
+@mixin respond-to($width){
+  @media only screen and (max-width: $width){
+    @content;
+  }
+}

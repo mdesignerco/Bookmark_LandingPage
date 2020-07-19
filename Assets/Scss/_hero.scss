@@ -1,13 +1,38 @@
 .hero {
   @include display( flex, center, center );
   @include padding(0, $padding*32, 0, $padding*32);
+  @include respond-to($tablet) {
+    flex-direction: column-reverse;
+    @include padding(0, $padding*4, 0, $padding*4);
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+    >img {
+      width: 100%;
+      height: auto;
+    }
+  }
   &__description {
+    @include respond-to($tablet) {
+      flex-direction: column;
+      @include display( flex, center, center );
+    }
     &__title {
-      @include fontStyle( $fontSize-XL, 500);
       color: $VeryDarkBlue;
+      @include fontStyle( $fontSize-XL, 500);
     }
     &__text {
       @include fontStyle( $fontSize, 400);
+    }
+    &__buttons {
+      flex-direction: row;
+      @include display( flex, flex-start, center );
+      @include respond-to($tablet) {
+        width: 100%;
+        flex-direction: row;
+        @include display( flex, center, center );
+      }
     }
   }
 }
