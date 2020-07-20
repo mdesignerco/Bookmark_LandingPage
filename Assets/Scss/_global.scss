@@ -109,5 +109,21 @@ body {
         }
       }
     }
+    &-great {
+      @include display(flex, center, flex-start );
+      width: 100%;
+      background-color: $softGreen;
+      flex-direction: column;
+      border-radius: $padding;
+      &::placeholder {
+        color: $softGreen;
+        @include fontStyle( $fontSize - 6px, 400 );
+      }
+      &:focus {
+        border: 1px solid $softRed;
+        outline: $softGreen;
+        background-image: url('/Assets/images/icon-error.svg');
+      }
+    }
   }
 }

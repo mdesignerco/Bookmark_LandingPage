@@ -232,6 +232,26 @@ body {
   outline: #fa5757;
   background-image: url("/Assets/images/icon-error.svg");
 }
+.input__group-great {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  background-color: #9adac1;
+  flex-direction: column;
+  border-radius: 4px;
+}
+.input__group-great::placeholder {
+  color: #9adac1;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.input__group-great:focus {
+  border: 1px solid #fa5757;
+  outline: #9adac1;
+  background-image: url("/Assets/images/icon-error.svg");
+}
 
 .navbar {
   padding-top: 0;
@@ -243,8 +263,12 @@ body {
   align-items: center;
 }
 @media only screen and (max-width: 1024px) {
-  .navbar {
+  .navbar__expand {
+    position: fixed;
     flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(37, 43, 70, 0.8);
     padding-top: 16px;
     padding-left: 16px;
     padding-bottom: 16px;
@@ -269,6 +293,9 @@ body {
 }
 @media only screen and (max-width: 1024px) {
   .navbar__list {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
     padding-top: 0;
     padding-left: 0;
     padding-bottom: 0;
@@ -276,7 +303,6 @@ body {
     display: inherit;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
   }
 }
 .navbar__list__item {
@@ -290,6 +316,19 @@ body {
   color: #252b46;
   text-transform: uppercase;
   cursor: pointer;
+}
+@media only screen and (max-width: 1024px) {
+  .navbar__list__item {
+    width: 100%;
+    color: #ffffff;
+    padding-top: 8px;
+    padding-left: 0;
+    padding-bottom: 8px;
+    padding-right: 0;
+  }
+  .navbar__list__item:not(:last-child) {
+    border-bottom: 1px solid #ffffff;
+  }
 }
 .navbar__list__item:hover {
   color: #fa5757;

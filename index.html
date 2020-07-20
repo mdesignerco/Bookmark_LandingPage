@@ -13,8 +13,9 @@
 <body>
 
   <div class="navbar">
-    <div class="navbar__logo">
+    <div  class="navbar__logo">
       <img
+        id="logo"
         src="./Assets/images/logo-bookmark.svg"
         alt="Bookmark"
       />
@@ -206,14 +207,21 @@
     <span class="features__span">35,000+ already joined</span>
     <h2 class="features__title-white">Stay up-to-date with what <br>  we’re doing</h2>
     <div class="features__form">
-      <div class="input__group">
+      <div id="registerGroup" class="input__group">
         <input
+          id="register"
           type="text"
           placeholder="Enter your email address"
+          required
         />
-        <!-- <span class="input-message">Whoops, make sure it's an email</span> -->
       </div>
-      <button class="button__action">Contact Us</button>
+      <button
+        id="registerButton"
+        type="submit"
+        class="button__action"
+      >
+        Contact Us
+      </button>
     </div>
   </section>
 
