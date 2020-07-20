@@ -9,6 +9,12 @@ const buttonRegister = document.getElementById('registerButton');
 const inputEmail = document.getElementById('register');
 const registerGroup = document.getElementById('registerGroup');
 const logo = document.getElementById('logo');
+const iconMenu = document.getElementsByClassName('navbar');
+const dropdown = document.getElementById('dropdown');
+const navButton = document.getElementById('navButton');
+const social = document.getElementById('social');
+const navbar = document.getElementById('navbar');
+const navbarList = document.getElementById('dropdownCollapse');
 
 let width = screen.availWidth;
 
@@ -31,7 +37,6 @@ let confirmationMessage = `
   <span class="input-message">Great!, You email has been send </span>`;
 
 if( width <= '1024') {
-  logo.src = './Assets/images/logo-bookmark-white.svg';
 } else {
   document.onreadystatechange = () => {
     let margin = 80;
@@ -84,3 +89,26 @@ const validateEmail = () => {
 };
 
 buttonRegister.addEventListener ('click', validateEmail );
+
+navbar.addEventListener('click', () => {
+  let containNavbar = navbar.classList.contains('navbar__expand');
+  console.log('hello')
+  if ( containNavbar ) {
+    logo.src = './Assets/images/logo-bookmark.svg';
+    dropdown.src = './Assets/images/icon-hamburger.svg';
+    addClass(navbar, 'navbar');
+    navbar.classList.remove('navbar__expand');
+    navbarList.style.display = 'none';
+    social.style.display= 'none';
+  } else {
+    logo.src = './Assets/images/logo-bookmark-white.svg';
+    dropdown.src = './Assets/images/icon-close.svg';
+    addClass(navbar, 'navbar__expand');
+    navbarList.style.display = 'flex';
+    navButton.style.backgroundColor = 'transparent';
+    navButton.style.border = '1px solid #ffffff';
+    navButton.style.width = '100%';
+    navButton.style.margin = '0';
+    social.style.display= 'flex';
+  }
+});

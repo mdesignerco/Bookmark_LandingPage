@@ -12,23 +12,37 @@
 </head>
 <body>
 
-  <div class="navbar">
+  <nav id="navbar" class="navbar">
     <div  class="navbar__logo">
       <img
         id="logo"
         src="./Assets/images/logo-bookmark.svg"
         alt="Bookmark"
       />
+      <img
+        id="dropdown"
+        class="dropdown"
+        src="./Assets/images/icon-hamburger.svg"
+        alt="hamburger menu"
+      />
     </div>
-    <ul class="navbar__list">
+    <ul id="dropdownCollapse" class="navbar__list">
       <li class="navbar__list__item">Features</li>
       <li class="navbar__list__item">Pricing</li>
       <li class="navbar__list__item">Contact</li>
       <li class="navbar__list__item">
-        <button class="button__action">Login</button>
+        <button id="navButton" class="button__action">Login</button>
       </li>
     </ul>
-  </div>
+    <ul id="social" class="navbar social">
+      <li class="social item">
+        <img src="./Assets/images/icon-facebook.svg" alt="Facebook">
+      </li>
+      <li class="social item">
+        <img src="./Assets/images/icon-twitter.svg" alt="Twitter">
+      </li>
+    </ul>
+  </nav>
 
   <section class="hero">
     <div class="hero__description">

@@ -253,6 +253,10 @@ body {
   background-image: url("/Assets/images/icon-error.svg");
 }
 
+.dropdown {
+  cursor: pointer;
+}
+
 .navbar {
   padding-top: 0;
   padding-left: 128px;
@@ -263,33 +267,26 @@ body {
   align-items: center;
 }
 @media only screen and (max-width: 1024px) {
-  .navbar__expand {
-    position: fixed;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(37, 43, 70, 0.8);
+  .navbar {
     padding-top: 16px;
     padding-left: 16px;
     padding-bottom: 16px;
     padding-right: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
 @media only screen and (max-width: 1024px) {
   .navbar__logo {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
 }
 .navbar__list {
+  list-style: none;
   display: inherit;
   justify-content: center;
   align-items: center;
-  list-style: none;
 }
 @media only screen and (max-width: 1024px) {
   .navbar__list {
@@ -300,7 +297,7 @@ body {
     padding-left: 0;
     padding-bottom: 0;
     padding-right: 0;
-    display: inherit;
+    display: none;
     justify-content: center;
     align-items: center;
   }
@@ -335,6 +332,37 @@ body {
 }
 .navbar__list__item > button {
   text-transform: uppercase;
+}
+@media only screen and (max-width: 1024px) {
+  .navbar__expand {
+    position: fixed;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(37, 43, 70, 0.8);
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    padding-right: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+.navbar__expand__logo {
+  width: 100%;
+}
+.navbar.social {
+  list-style: none;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.navbar .item {
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-bottom: 8px;
+  padding-right: 8px;
 }
 
 .hero {
