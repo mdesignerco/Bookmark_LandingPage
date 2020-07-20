@@ -39,6 +39,7 @@ let confirmationMessage = `
 if( width <= '1024') {
 } else {
   document.onreadystatechange = () => {
+    dropdown.style.display = 'none';
     let margin = 80;
     for ( let i = 0; i < cards.length; i++ ) {
       cards[i].style.marginTop = `${margin}px`;
